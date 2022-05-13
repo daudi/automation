@@ -1,0 +1,40 @@
+---
+title: "Automation using knitr"
+author: "David Whiting"
+output:
+  word_document
+params:
+  a: 10
+---
+
+# This is a top-level header
+
+Here we can write some text. 
+
+```{r}
+
+a <- params$a
+threshold <- 3
+answer <- threshold * a
+
+```
+
+* The value of a is: `r a`. 
+* `r threshold` times `r a` is `r answer`. 
+
+```{r}
+
+if (a > threshold) {
+  res <- "greater than"
+} else if (a < threshold) {
+  res <- "less than"
+} else {
+  res <- "the same as"
+}
+
+
+```
+
+`r a` is `r res` `r threshold`.
+
+
